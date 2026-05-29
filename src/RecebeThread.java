@@ -25,7 +25,11 @@ public class RecebeThread extends Thread {
                     boolean hit = mapa.receiveShot(x, y);
                     
                     String feedback = hit ? "RESULT:ACERTOU!" : "RESULT:ERROU!";
-                    rede.enviaMensagem(feedback, msg, y);(feedback, packet.getAddress().getHostAddress(), packet.getPort());
+                    rede.enviaMensagem(
+                        feedback, 
+                        packet.getAddress().getHostAddress(), 
+                        packet.getPort()
+                    );
 
                     System.out.println("\n[INIMIGO] Atirou em (" + x + "," + y + ")");
                     System.out.println(hit ? "RESULTADO: Seu navio foi atingido!" : "RESULTADO: Ele errou!");
